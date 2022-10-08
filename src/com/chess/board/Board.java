@@ -85,7 +85,7 @@ public class Board {
         board[7][3] = "K";
         board[7][4] = "Q";
         board[7][5] = "B";
-        board[5][5] = "N";
+        board[7][6] = "N";
         board[7][7] = "R";
 
         return board;
