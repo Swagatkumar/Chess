@@ -32,6 +32,37 @@ public class Board {
         }
     }
 
+    public static void printPlayer2Board(String[][] board) {
+        for (int i = 7; i >= 0; i--) {
+            for (int k = 0; k < 4 || (k == 4 && i == 0); k++) {
+                for (int j = 7; j >= 0; j--) {
+                    for (int l = 0; l < 4 || (l == 4 && j == 0); l++) {
+                        if (j == 7 && l == 0) {
+                            if (k == 2) {
+                                System.out.print(8 - i + " ");
+                            } else {
+                                System.out.print("  ");
+                            }
+                        }
+                        if (k == 0 || l == 0 || k == 4 || l == 4) {
+                            System.out.print("# ");
+                        } else if (k == 2 && l == 2 && board[i][j] != null) {
+                            System.out.print(board[i][j] + " ");
+                        } else {
+                            System.out.print("  ");
+                        }
+                    }
+                }
+                System.out.println();
+            }
+        }
+        char file = 'h';
+        for (int m = 0; m < 8; m++) {
+            System.out.print("      " + file + " ");
+            file--;
+        }
+    }
+
     public static String[][] getIntialBoard() {
         String[][] board = new String[8][8];
         board[0][0] = "r";
@@ -54,7 +85,7 @@ public class Board {
         board[7][3] = "K";
         board[7][4] = "Q";
         board[7][5] = "B";
-        board[7][6] = "N";
+        board[5][5] = "N";
         board[7][7] = "R";
 
         return board;
